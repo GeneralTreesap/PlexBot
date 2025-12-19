@@ -492,18 +492,4 @@ public class MusicInteractionHandler(IPlexMusicService plexMusicService, IPlayer
         _lastInteracted[key] = DateTime.UtcNow;
         return false;
     }
-    
-    [SlashCommand("volume", "Set volume (0-200%)")]
-    public async Task SetVolumeAsync(int level = 100)
-    {
-        var player = await _playerService.GetOrCreatePlayerAsync(Context.Guild.Id, Context.User as IVoiceState, Context.Channel);
-        if (player == null || player.State == PlayerState.NotConnected)
-        {
-            await RespondAsync("Bot not in voice channel.");
-            return;
-        }
-        level = Math.Clamp(level, 0, 200);
-        await player.SetVolumeAsync(level / 100f);
-        await RespondAsync($"Volume set to {level}%");
-    }
 }
