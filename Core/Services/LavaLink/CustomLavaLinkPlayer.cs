@@ -108,7 +108,7 @@ public sealed class CustomLavaLinkPlayer(IPlayerProperties<CustomLavaLinkPlayer,
 public sealed record CustomPlayerOptions(ITextChannel? TextChannel) : QueuedLavalinkPlayerOptions
 {
     /// <summary>Gets or sets the default volume level, ranging from 0.0 to 1.0</summary>
-    public float DefaultVolume { get; init; } = 0.2f;
+    public float DefaultVolume { get; init; } = 1.0f; // Was 0.2f
 
     /// <summary>Gets or sets whether to show track thumbnails in player messages, used for visual feedback</summary>
     public bool ShowThumbnails { get; init; } = true;
