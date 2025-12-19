@@ -116,7 +116,7 @@ public sealed record CustomPlayerOptions(ITextChannel? TextChannel) : QueuedLava
     /// <summary>Gets or sets whether to delete player messages when they become outdated, used for cleanup and organization</summary>
     public bool DeleteOutdatedMessages { get; init; } = true;
 
-    public TimeSpan InactivityTimeout { get; init; } = TimeSpan.FromMinutes(20);
+    public TimeSpan InactivityTimeout { get; init; } = TimeSpan.FromMinutes(1440);
 
     /// <summary>Initializes a new instance of the CustomPlayerOptions class, setting default values for LavaLink player configuration</summary>
     public CustomPlayerOptions() : this((ITextChannel?)null)
