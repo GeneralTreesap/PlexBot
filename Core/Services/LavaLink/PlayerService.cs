@@ -39,7 +39,7 @@ public class PlayerService(VisualPlayerStateManager stateManager, IAudioService 
             {
                 return ValueTask.FromResult(new CustomLavaLinkPlayer(properties, serviceProvider));
             }
-            float defaultVolume = 0.2f;
+            float defaultVolume = 1.0f;
             // Create player options
             CustomPlayerOptions playerOptions = new()
             {
